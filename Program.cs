@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace animalInterpreter
+namespace KemonoLangInterpreter
 {
     class Program
     {
@@ -55,7 +55,7 @@ namespace animalInterpreter
                     ++Memory[Address];
                 if (Orders[OrderNo] == "すごーい！")
                     --Address;
-                if (Orders[OrderNo] == "すっごーい！")
+                if (Orders[OrderNo] == "すっごーい！"|| Orders[OrderNo] == "﻿すっごーい！")
                     --Memory[Address];
 
                 if (Orders[OrderNo] == "なにこれなにこれ！"|| Orders[OrderNo] == "﻿なにこれなにこれ！")
@@ -81,6 +81,7 @@ namespace animalInterpreter
                 }
 
                 ++OrderNo;
+                if (OrderNo == Orders.Length) return;
             }
         }
         public int GetPearUwa_(int n)
